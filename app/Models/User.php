@@ -45,6 +45,10 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
 
+    public function post_find(){
+        return $this->hasMany(Post::class,'user_id','id');
+    }
+
     public function Roles(){
 
 

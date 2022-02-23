@@ -21,13 +21,17 @@ $(function() {
 
 
             $('#tagtb').html(xd)
-            console.log(xd)
+                // console.log(xd)
 
 
             // $('#tbb').html(xd)
         })
 
+
+
     }
+
+
     $.ajaxSetup({
 
 
@@ -43,6 +47,10 @@ $(function() {
 
 
     })
+
+
+
+
     $(document).on('submit', '#form_tag', function(e) {
 
 

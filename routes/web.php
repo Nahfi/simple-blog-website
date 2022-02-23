@@ -81,9 +81,15 @@ Route::group(['middleware'=>'auth'],function(){
 
             
                 Route::get('/view','index')->name('post_view');
+                Route::post('/view','store')->name('post_store');
 
+                Route::get('/unpub/{id}','unpub')->name('post_unpub');
+                Route::get('/pub/{id}','pub')->name('post_pub');
+                Route::get('/load','load')->name('post_load');
+                Route::get('/delete/{id}','delete')->name('post_delete');
 
-
+                Route::get('/edit/{id}','edit')->name('post_edit');
+                Route::post('/update','update')->name('post_update');
 
             });
 

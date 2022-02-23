@@ -205,6 +205,8 @@
 							</div>
 						</div>
 					</div>
+		    
+		
 
 
 
@@ -227,13 +229,14 @@
 	 
  
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.4/datatables.min.js"></script>
-		
+	  <script src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js"></script>
+
 		<!-- Bootstrap Core JS -->
         <script src="/admin/assets/js/popper.min.js"></script>
         <script src="/admin/assets/js/bootstrap.min.js"></script>
 		
 		<!-- Slimscroll JS -->
-        <script src="/admin/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+       <script src="/admin/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 		
 		<script src="/admin/assets/plugins/raphael/raphael.min.js"></script>    
 		<script src="/admin/assets/plugins/morris/morris.min.js"></script>  
@@ -243,6 +246,22 @@
 		<script  src="/admin/assets/js/script.js"></script>
 		<script  src="/admin/assets/js/cat.js"></script>
 		<script  src="/admin/assets/js/tag.js"></script>
+		<script  src="/admin/assets/js/post.js"></script>
+
+
+		<script>
+			ClassicEditor
+			    .create( document.querySelector( '#txt' ) )
+			    .catch( error => {
+				  console.error( error );
+			    } );
+
+			    ClassicEditor
+			    .create( document.querySelector( '#xe' ) )
+			    .catch( error => {
+				  console.error( error );
+			    } );
+		  </script>
 		
     </body>
 

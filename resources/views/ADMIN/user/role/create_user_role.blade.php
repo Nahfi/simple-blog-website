@@ -209,15 +209,15 @@
                                          <div class="x">
                                         
 
-                                          <input type="checkbox" name="chk[]" value="super admin" id="n">
+                                          <input class="m1" type="checkbox" name="chk[]" value="super admin" id="n">
                                           <label for="n">super admin</label>
 
 
 
 
-                                          <input class="chk" type="checkbox" name="chk[]"  value="post"  id="o">
-                                          <label for="o">post creator</label>
-                                          <input type="checkbox" name="chk[]" value="user" id="p">
+                                          <input class="m1" type="checkbox" name="chk[]"  value="post"  id="o">
+                                          <label  for="o">post creator</label>
+                                          <input class="m1" type="checkbox" name="chk[]" value="user" id="p">
                                           <label for="p">user creator</label>
                                          </div>
                                           

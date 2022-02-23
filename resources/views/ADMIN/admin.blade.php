@@ -3,6 +3,22 @@
 
 @section('dash')
 
+
+
+
+
+@php
+	
+	$x= \App\Models\Catagorie::count();
+	$y= \App\Models\Post::count();
+	$z= \App\Models\Tag::count();
+	$u= \App\Models\user::count();
+
+
+
+@endphp
+
+
 					 <div class="row">
 						<div class="col-xl-3 col-sm-6 col-12">
 							<div class="card">
@@ -12,11 +28,11 @@
 											<i class="fe fe-users"></i>
 										</span>
 										<div class="dash-count">
-											<h3>168</h3>
+											<h3>{{ $u }}</h3>
 										</div>
 									</div>
 									<div class="dash-widget-info">
-										<h6 class="text-muted">Doctors</h6>
+										<h6 class="text-muted">User</h6>
 										<div class="progress progress-sm">
 											<div class="progress-bar bg-primary w-50"></div>
 										</div>
@@ -32,12 +48,12 @@
 											<i class="fe fe-credit-card"></i>
 										</span>
 										<div class="dash-count">
-											<h3>487</h3>
+											<h3>{{ $y }}</h3>
 										</div>
 									</div>
 									<div class="dash-widget-info">
 										
-										<h6 class="text-muted">Patients</h6>
+										<h6 class="text-muted">Post</h6>
 										<div class="progress progress-sm">
 											<div class="progress-bar bg-success w-50"></div>
 										</div>
@@ -53,12 +69,12 @@
 											<i class="fe fe-money"></i>
 										</span>
 										<div class="dash-count">
-											<h3>485</h3>
+											<h3>{{ $z }}</h3>
 										</div>
 									</div>
 									<div class="dash-widget-info">
 										
-										<h6 class="text-muted">Appointment</h6>
+										<h6 class="text-muted">Tags</h6>
 										<div class="progress progress-sm">
 											<div class="progress-bar bg-danger w-50"></div>
 										</div>
@@ -74,12 +90,12 @@
 											<i class="fe fe-folder"></i>
 										</span>
 										<div class="dash-count">
-											<h3>$62523</h3>
+											<h3>{{ $x }}</h3>
 										</div>
 									</div>
 									<div class="dash-widget-info">
 										
-										<h6 class="text-muted">Revenue</h6>
+										<h6 class="text-muted">Catagories</h6>
 										<div class="progress progress-sm">
 											<div class="progress-bar bg-warning w-50"></div>
 										</div>

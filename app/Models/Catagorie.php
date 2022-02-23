@@ -13,4 +13,29 @@ class Catagorie extends Model
 
         
     ];
+
+    
+    public function find_post(){
+
+
+           
+        return $this->belongsToMany(Post::class,'catagorie_post','cat_id','post_id');
+    }
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
