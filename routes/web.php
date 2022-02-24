@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin_view;
+use App\Http\Controllers\Blog;
 use App\Http\Controllers\CatagorieController;
 use App\Http\Controllers\is_admin;
 use App\Http\Controllers\Post_controller;
@@ -185,8 +186,29 @@ Route::group(['middleware'=>'check'],function(){
     Route::get('/', function () {
         return view('User.index');
     });
+  
     
+    // Route::get('/posts', function () {
+    //     return view('User.blog.blog-sidebar');
+      
+    // });
 
+    Route::controller(Blog::class)->group(function(){
+
+
+
+
+        Route::get('/posts','index')->name('all_post');
+        Route::prefix('/posts')->group(function () {
+            
+            Route::get('/single/{slug}','single')->name('single_post');
+            Route::get('/cat/{slug}','cat')->name('cat_post');
+
+
+        });
+
+    });
+  
 
 });
 

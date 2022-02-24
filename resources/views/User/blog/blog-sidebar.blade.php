@@ -1,20 +1,15 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
   
-  
-<!-- Mirrored from themes.hody.co/html/comet/index-01.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 11 Jan 2017 09:39:31 GMT -->
+<!-- Mirrored from themes.hody.co/html/comet/blog-sidebar.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 11 Jan 2017 09:50:21 GMT -->
 <head>
     <title>Comet | Creative Multi-Purpose HTML Template</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="/user/css/bundle.css">
-    <link rel="stylesheet" href="/user/css/style.css">
+    <link rel="stylesheet" href="{{ asset('/user/css/bundle.css') }}">
+    <link rel="stylesheet" href="{{ asset('/user/css/style.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Halant:300,400" rel="stylesheet" type="text/css">
@@ -34,7 +29,7 @@
 
   <body>
     <!-- Preloader-->
-    {{-- <div id="loader">
+    <div id="loader">
       <div class="centrize">
         <div class="v-center">
           <div id="mask">
@@ -46,7 +41,7 @@
           </div>
         </div>
       </div>
-    </div> --}}
+    </div>
     <!-- End Preloader-->
     <!-- Navigation Bar-->
     <header id="topnav">
@@ -54,8 +49,8 @@
         <!-- Logo container-->
         <div class="logo">
           <a href="index-2.html">
-            <img src="/user/user/images/logo_light.png" alt="" class="logo-light">
-            <img src="/user/user/images/logo_dark.png" alt="" class="logo-dark">
+            <img src="/user/images/logo_light.png" alt="" class="logo-light">
+            <img src="/user/images/logo_dark.png" alt="" class="logo-dark">
           </a>
         </div>
         <!-- End Logo container-->
@@ -212,11 +207,6 @@
                 </li>
               </ul>
             </li>
-            
-
-
-
-            
             <li class="has-submenu">
               <a href="#">Pages</a>
               <ul class="submenu megamenu">
@@ -424,8 +414,6 @@
                 </li>
               </ul>
             </li>
-
-
             <li class="has-submenu">
               <a href="#">Shop</a>
               <ul class="submenu">
@@ -454,476 +442,164 @@
                 </li>
               </ul>
             </li>
-            <li class="has-submenu">
-              @if (Route::has('login'))
-          <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-              @auth
-            
-              <li class="has-submenu">
-                
-                <a href="#">{{ Auth::user()->name }}</a>
-
-                <ul class="submenu">
-                  <p style="margin-left: 15px; color:black; font-size:14px">
-                    manage account 
-                  </p>
-                  <li>
-                    <a href="{{ route('profile.show') }}">User_Profile</a>
-                  </li>
-                  <li>
-                    <a id="logout" href="">Logout</a>
-                  </li>
-                 
-                </ul>
-              </li>
-                
-              @else
-                  <li><a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a></li>
-
-                  @if (Route::has('register'))
-                      <li><a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a></li>
-                  @endif
-              @endauth
-          </div>
-      @endif
-          </li>
-   
           </ul>
           <!-- End navigation menu        -->
         </div>
       </div>
     </header>
     <!-- End Navigation Bar-->
-    <!-- Home section-->
-    <section id="home">
-      <!-- Video background-->
-      <div id="video-wrapper" data-fallback-bg="/user/images/bg/5.jpg">
-        <div data-property="{videoURL: '9No-FiEInLA'}" class="player"></div>
-      </div>
-      <!-- end of video background-->
-      <!-- Home Slider-->
-      <div id="home-slider" class="flexslider">
-        <ul class="slides">
-          <li>
-            <div class="slide-wrap">
-              <div class="slide-content text-left bold-text">
-                <div class="container">
-                  <h6>Start building today. It's your turn.</h6>
-                  <h1 class="upper">Interactive design studio<span class="red-dot"></span></h1>
-                  <p><a href="#" class="btn btn-light-out">Read More</a><a href="#" class="btn btn-color btn-full">Services</a>
-                  </p>
-                </div>
+    <section class="page-title parallax">
+      <div data-parallax="scroll" data-image-src="/user/images/bg/18.jpg" class="parallax-bg"></div>
+      <div class="parallax-overlay">
+        <div class="centrize">
+          <div class="v-center">
+            <div class="container">
+              <div class="title center">
+                <h1 class="upper">This is our blog<span class="red-dot"></span></h1>
+                <h4>We have a few tips for you.</h4>
+                <hr>
               </div>
             </div>
-          </li>
-          <li>
-            <div class="slide-wrap">
-              <div class="slide-content text-left bold-text">
-                <div class="container">
-                  <h6>We create websites and videos.</h6>
-                  <h1 class="upper">Welcome to comet<span class="red-dot"></span></h1>
-                  <p><a href="#" class="btn btn-color">Explore</a><a href="#" class="btn btn-light-out">Join us</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <!-- end of home slider-->
-    </section>
-    <!-- end of home section-->
-    <section id="about">
-      <div class="container">
-        <div class="title center">
-          <h4 class="upper">We are driven by creative.</h4>
-          <h2>Who We Are<span class="red-dot"></span></h2>
-          <hr>
-        </div>
-        <div class="section-content">
-          <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-              <p class="lead-text serif text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sed ad possimus magnam maiores. Ipsam quas velit blanditiis debitis consequuntur mollitia assumenda nam obcaecati illo! Dolores deleniti animi.</p>
-            </div>
-          </div>
-          <!-- end of row-->
-        </div>
-        <!-- end of section content-->
-      </div>
-      <!-- end of container-->
-    </section>
-    <section class="p-0 b-0">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-6 col-sm-4 img-side img-left mb-0">
-            <div class="img-holder">
-              <img src="/user/images/bg/33.jpg" alt="" class="bg-img">
-              <div class="centrize">
-                <div class="v-center">
-                  <div class="title txt-xs-center">
-                    <h4 class="upper">This is what we love to do.</h4>
-                    <h3>Expertise<span class="red-dot"></span></h3>
-                    <hr>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end of side background image-->
-          <div class="col-md-6 col-md-offset-6 col-sm-8 col-sm-offset-4">
-            <div class="services">
-              <div class="row">
-                <div class="col-sm-6 border-bottom border-right">
-                  <div class="service"><i class="icon-focus"></i><span class="back-icon"><i class="icon-focus"></i></span>
-                    <h4>Branding</h4>
-                    <hr>
-                    <p class="alt-paragraph">Facilis doloribus illum quis, expedita mollitia voluptate non iure, perspiciatis repellat eveniet volup.</p>
-                  </div>
-                  <!-- end of service-->
-                </div>
-                <div class="col-sm-6 border-bottom">
-                  <div class="service"><i class="icon-layers"></i><span class="back-icon"><i class="icon-layers"></i></span>
-                    <h4>Interactive</h4>
-                    <hr>
-                    <p class="alt-paragraph">Commodi totam esse quis alias, nihil voluptas repellat magni, id fuga perspiciatis, ut quia beatae, accus.</p>
-                  </div>
-                  <!-- end of service-->
-                </div>
-                <div class="col-sm-6 border-bottom border-right">
-                  <div class="service"><i class="icon-mobile"></i><span class="back-icon"><i class="icon-mobile"></i></span>
-                    <h4>Production</h4>
-                    <hr>
-                    <p class="alt-paragraph">Doloribus qui asperiores nisi placeat volup eum, nemo est, praesentium fuga alias sit quis atque accus.</p>
-                  </div>
-                  <!-- end of service-->
-                </div>
-                <div class="col-sm-6 border-bottom">
-                  <div class="service"><i class="icon-globe"></i><span class="back-icon"><i class="icon-globe"></i></span>
-                    <h4>Editing</h4>
-                    <hr>
-                    <p class="alt-paragraph">Aliquid repellat facilis quis. Sequi excepturi quis dolorem eligendi deleniti fuga rerum itaque.</p>
-                  </div>
-                  <!-- end of service-->
-                </div>
-              </div>
-            </div>
-            <!-- end of row-->
+            <!-- end of container-->
           </div>
         </div>
-        <!-- end of row -->
       </div>
     </section>
     <section>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-6 col-sm-4 img-side img-right">
-            <div class="img-holder">
-              <img src="/user/images/bg/10.jpg" alt="" class="bg-img">
-            </div>
-          </div>
-          <!-- end of side background image-->
-        </div>
-        <!-- end of row-->
-      </div>
       <div class="container">
         <div class="row">
-          <div class="col-md-5 col-sm-8">
-            <div class="title">
-              <h4 class="upper">Not just code.</h4>
-              <h3>The Vision<span class="red-dot"></span></h3>
-              <hr>
+          <div class="col-md-8">
+
+
+            @foreach ($all as $a )
+              
+
+            <div class="blog-posts">
+              <article class="post-single">
+                <div class="post-info">
+                  <h2><a href="#">{{ $a->title }}</a></h2>
+                  <h6 class="upper"><span>By</span><a href="#"> {{ $a->user_find->name }}</a><span class="dot"></span><span>{{date("F j, Y, g:i a",strtotime($a->created_at))  }}</span><span class="dot"></span>
+                  
+                   @foreach ($a->find_cat as $x )
+                     
+                  
+                    <a href="#" class="post-tag">
+                               {{ $x->name  }} |
+                      {{-- {{ $a->find_cat->name }} --}}
+                    </a>
+                    @endforeach
+                  </h6>
+                </div>
+                <div class="post-media">
+                  <div data-options="{&quot;animation&quot;: &quot;slide&quot;, &quot;controlNav&quot;: true" class="flexslider nav-outside">
+                    <ul class="slides">
+                      <li>
+                        <img src="{{ asset($a->feature_image) }}" alt="">
+                      </li>
+                   
+                    </ul>
+                  </div>
+                </div>
+                <div class="post-body">
+                  <p>
+               
+                    {!! \Illuminate\Support\Str::words(htmlspecialchars_decode($a->content), 19,'........')               !!}
+                    
+                  </p>
+                  <p><a href="{{ route('single_post',$a->slug) }}" class="btn btn-color btn-sm">Read More</a>
+                  </p>
+                </div>
+              </article>
+            
             </div>
-            <div class="row">
-              <div class="col-sm-6">
-                <div class="text-box">
-                  <h4 class="upper small-heading">Strategy</h4>
-                  <p>Natus totam adipisci illum aut nihil consequuntur ut, ducimus alias iusto facili.</p>
-                </div>
-                <!-- end of text box-->
-              </div>
-              <div class="col-sm-6">
-                <div class="text-box">
-                  <h4 class="upper small-heading">Design</h4>
-                  <p>Nisi, ut commodi dolor, quae doloremque earum alias accusantium sint.</p>
-                </div>
-                <!-- end of text box-->
-              </div>
-              <div class="col-sm-6">
-                <div class="text-box">
-                  <h4 class="upper small-heading">Skills</h4>
-                  <p>Nesciunt est eaque, expedita cum minima reprehenderit? Harum vero dolorum.</p>
-                </div>
-                <!-- end of text box-->
-              </div>
-              <div class="col-sm-6">
-                <div class="text-box">
-                  <h4 class="upper small-heading">Power</h4>
-                  <p>Fuga ipsum, repellendus? Architecto commodi magni non nihil et iusto.</p>
-                </div>
-                <!-- end of text box-->
-              </div>
-            </div>
-            <!-- end of row              -->
-          </div>
-        </div>
-        <!-- end of row-->
-      </div>
-      <!-- end of container-->
-    </section>
-    <section id="portfolio" class="pb-0">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="title m-0 txt-xs-center txt-sm-center">
-              <h2 class="upper">Selected Works<span class="red-dot"></span></h2>
-              <hr>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <ul id="filters" class="no-fix mt-25">
-              <li data-filter="*" class="active">All</li>
-              <li data-filter=".branding">Branding</li>
-              <li data-filter=".graphic">Graphic</li>
-              <li data-filter=".printing">Printing</li>
-              <li data-filter=".video">Video</li>
+            @endforeach
+         
+
+                 
+
+
+
+
+
+            <ul class="pagination">
+
+              {{ $all->links('vendor.pagination.default') }}
+              {{-- <li><a href="#" aria-label="Previous"><span aria-hidden="true"><i class="ti-arrow-left"></i></span></a>
+              </li>
+              <li class="active"><a href="#">1</a>
+              </li>
+              <li><a href="#">2</a>
+              </li>
+              <li><a href="#">3</a>
+              </li>
+              <li><a href="#">4</a>
+              </li>
+              <li><a href="#">5</a>
+              </li>
+              <li><a href="#" aria-label="Next"><span aria-hidden="true"><i class="ti-arrow-right"></i></span></a>
+              </li> --}}
             </ul>
-            <!-- end of portfolio filters-->
+            <!-- end of pagination-->
+          </div>
+          <div class="col-md-3 col-md-offset-1">
+            <div class="sidebar hidden-sm hidden-xs">
+              <div class="widget">
+                <h6 class="upper">Search blog</h6>
+                <form>
+                  <input type="text" placeholder="Search.." class="form-control">
+                </form>
+              </div>
+              <!-- end of widget        -->
+
+
+              @php
+                $cat=\App\Models\Catagorie::latest()->take(3)->get()
+              @endphp
+              <div class="widget">
+                <h6 class="upper">Categories</h6>
+                <ul class="nav">
+
+
+               
+                  @foreach ($cat as $c)
+               
+                  <li><a href="#">{{ $c->name }}</a>
+                  </li>
+                  
+                  @endforeach
+                </ul>
+              </div>
+              <!-- end of widget        -->
+              <div class="widget">
+                <h6 class="upper">Popular Tags</h6>
+                <div class="tags clearfix"><a href="#">Design</a><a href="#">Fashion</a><a href="#">Startups</a><a href="#">Tech</a><a href="#">Web</a><a href="#">Lifestyle</a>
+                </div>
+              </div>
+              @php
+              $post=\App\Models\Post::latest()->take(4)->get()
+            @endphp
+              <!-- end of widget      -->
+              <div class="widget">
+                <h6 class="upper">Latest Posts</h6>
+                <ul class="nav">
+
+                  @foreach ($post as $p )
+                    
+                
+                  <li><a href="{{ route('single_post',$p->slug) }}">{{ $p->title }}<i class="ti-arrow-right"></i><span>{{date("F j, Y, g:i a",strtotime($p->created_at))  }}</span></a>
+                  </li>
+                  @endforeach
+                 
+                </ul>
+              </div>
+              <!-- end of widget          -->
+            </div>
+            <!-- end of sidebar-->
           </div>
         </div>
         <!-- end of row-->
       </div>
-      <div class="section-content pb-0">
-        <div id="works" class="four-col wide mt-50">
-          <div class="work-item branding video">
-            <div class="work-detail">
-              <a href="portfolio-single-1.html">
-                <img src="/user/images/portfolio/1.jpg" alt="">
-                <div class="work-info">
-                  <div class="centrize">
-                    <div class="v-center">
-                      <h3>Neleman Cava</h3>
-                      <p>Branding, Video</p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="work-item graphic printing">
-            <div class="work-detail">
-              <a href="portfolio-single-1.html">
-                <img src="/user/images/portfolio/7.jpg" alt="">
-                <div class="work-info">
-                  <div class="centrize">
-                    <div class="v-center">
-                      <h3>Sweet Lane</h3>
-                      <p>Graphic, Printing</p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="work-item printing branding">
-            <div class="work-detail">
-              <a href="portfolio-single-1.html">
-                <img src="/user/images/portfolio/6.jpg" alt="">
-                <div class="work-info">
-                  <div class="centrize">
-                    <div class="v-center">
-                      <h3>Jeff Burger</h3>
-                      <p>Printing, Branding</p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="work-item video graphic">
-            <div class="work-detail">
-              <a href="portfolio-single-1.html">
-                <img src="/user/images/portfolio/9.jpg" alt="">
-                <div class="work-info">
-                  <div class="centrize">
-                    <div class="v-center">
-                      <h3>Juice Meds</h3>
-                      <p>Video, Graphic</p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="work-item branding graphic">
-            <div class="work-detail">
-              <a href="portfolio-single-1.html">
-                <img src="/user/images/portfolio/11.jpg" alt="">
-                <div class="work-info">
-                  <div class="centrize">
-                    <div class="v-center">
-                      <h3>Prisma</h3>
-                      <p>Graphic, Branding</p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="work-item printing graphic">
-            <div class="work-detail">
-              <a href="portfolio-single-1.html">
-                <img src="/user/images/portfolio/10.jpg" alt="">
-                <div class="work-info">
-                  <div class="centrize">
-                    <div class="v-center">
-                      <h3>Delirio Tropical</h3>
-                      <p>Printing, Graphic</p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="work-item printing branding">
-            <div class="work-detail">
-              <a href="portfolio-single-1.html">
-                <img src="/user/images/portfolio/8.jpg" alt="">
-                <div class="work-info">
-                  <div class="centrize">
-                    <div class="v-center">
-                      <h3>Amendoas</h3>
-                      <p>Printing, Branding</p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="work-item graphic video">
-            <div class="work-detail">
-              <a href="portfolio-single-1.html">
-                <img src="/user/images/portfolio/3.jpg" alt="">
-                <div class="work-info">
-                  <div class="centrize">
-                    <div class="v-center">
-                      <h3>Hnina</h3>
-                      <p>Graphic, Video</p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- end of portfolio grid-->
-      </div>
-    </section>
-    <section>
-      <div class="container">
-        <div class="title center">
-          <h4 class="upper">Some of the best.</h4>
-          <h3>Our Clients<span class="red-dot"></span></h3>
-          <hr>
-        </div>
-        <div class="section-content">
-          <div class="boxes clients">
-            <div class="row">
-              <div class="col-sm-4 col-xs-6 border-right border-bottom">
-                <img src="/user/images/clients/1.png" alt="" data-animated="true" class="client-image">
-              </div>
-              <div class="col-sm-4 col-xs-6 border-right border-bottom">
-                <img src="/user/images/clients/2.png" alt="" data-animated="true" data-delay="500" class="client-image">
-              </div>
-              <div class="col-sm-4 col-xs-6 border-bottom">
-                <img src="/user/images/clients/3.png" alt="" data-animated="true" data-delay="1000" class="client-image">
-              </div>
-              <div class="col-sm-4 col-xs-6 border-right">
-                <img src="/user/images/clients/4.png" alt="" data-animated="true" class="client-image">
-              </div>
-              <div class="col-sm-4 col-xs-6 border-right">
-                <img src="/user/images/clients/5.png" alt="" data-animated="true" data-delay="500" class="client-image">
-              </div>
-              <div class="col-sm-4 col-xs-6">
-                <img src="/user/images/clients/6.png" alt="" data-animated="true" data-delay="1000" class="client-image">
-              </div>
-            </div>
-            <!-- end of row-->
-          </div>
-        </div>
-        <!-- end of section content-->
-      </div>
-    </section>
-    <section class="parallax">
-      <div data-parallax="scroll" data-image-src="/user/images/bg/7.jpg" class="parallax-bg"></div>
-      <div class="parallax-overlay pb-50 pt-50">
-        <div class="container">
-          <div class="title center">
-            <h3>What They Say<span class="red-dot"></span></h3>
-            <hr>
-          </div>
-          <div class="section-content">
-            <div id="testimonials-slider" data-options="{&quot;animation&quot;: &quot;slide&quot;, &quot;controlNav&quot;: true}" class="flexslider nav-outside">
-              <ul class="slides">
-                <li>
-                  <blockquote>
-                    <p>"Blanditiis impedit omnis excepturi rem dolores! Ab consequuntur reiciendis eaque atque."</p>
-                    <footer>Jon Snow - Google Inc.</footer>
-                  </blockquote>
-                </li>
-                <li>
-                  <blockquote>
-                    <p>"Dolorem natus, sint. Enim molestias expedita laboriosam perferendis possimus facere nostrum laudantium vero."</p>
-                    <footer>Daenerys Targarien - Apple Inc.</footer>
-                  </blockquote>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!-- end of container-->
-      </div>
-    </section>
-    <section>
-      <div class="container">
-        <div class="title center">
-          <h4 class="upper">We have a few tips for you.</h4>
-          <h2>The Blog<span class="red-dot"></span></h2>
-          <hr>
-        </div>
-        <div class="section-content">
-          <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-              <div class="blog-post">
-                <div class="post-body">
-                  <h3 class="serif"><a href="#">Checklists for Startups</a></h3>
-                  <hr>
-                  <p class="serif">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab corporis eos quod libero doloremque odio perspiciatis ratione cumque ex laboriosam, laborum accusantium quis quidem excepturi, adipisci neque, aliquam ea! [...]</p>
-                  <div class="post-info upper"><a href="#">Read More</a><span class="pull-right black-text">November 16, 2015</span>
-                  </div>
-                </div>
-                <!-- end of blog post-->
-              </div>
-              <div class="blog-post">
-                <div class="post-body">
-                  <h3 class="serif"><a href="#">Never Tell People What You Do</a></h3>
-                  <hr>
-                  <p class="serif">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab corporis eos quod libero doloremque odio perspiciatis ratione cumque ex laboriosam, laborum accusantium quis quidem excepturi, adipisci neque, aliquam ea! [...]</p>
-                  <div class="post-info upper"><a href="#">Read More</a><span class="pull-right black-text">November 12, 2015</span>
-                  </div>
-                </div>
-                <!-- end of blog post-->
-              </div>
-            </div>
-          </div>
-          <!-- end of row-->
-          <div class="clearfix"></div>
-          <div class="mt-25">
-            <p class="text-center"><a href="#" class="btn btn-color-out">View Full Blog          </a>
-            </p>
-          </div>
-        </div>
-        <!-- end of container-->
-      </div>
+      <!-- end of container-->
     </section>
     <!-- Footer-->
     <footer id="footer-widgets">
@@ -1060,18 +736,13 @@
       </div>
       <!-- end of container-->
     </footer>
-
-    <form id="lf" action="{{ route("logout") }}" method="post">
-      @csrf
-    </form>
     <!-- end of footer-->
     <script type="text/javascript" src="/user/js/jquery.js"></script>
     <script type="text/javascript" src="/user/js/bundle.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
     <script type="text/javascript" src="/user/js/main.js"></script>
-    <script type="text/javascript" src="/user/js/script.js"></script>
   </body>
 
 
-<!-- Mirrored from themes.hody.co/html/comet/index-01.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 11 Jan 2017 09:39:31 GMT -->
+<!-- Mirrored from themes.hody.co/html/comet/blog-sidebar.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 11 Jan 2017 09:50:21 GMT -->
 </html>

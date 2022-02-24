@@ -258,6 +258,7 @@ class Post_controller extends Controller
 
 
         $x->title=$r->title;
+        $x->slug=Str::slug($r->title);
         $x->content=$r->content;
         $x->update();
         $x->find_cat()->detach();
