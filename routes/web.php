@@ -202,7 +202,7 @@ Route::group(['middleware'=>'check'],function(){
         Route::prefix('/posts')->group(function () {
             
             Route::get('/single/{slug}','single')->name('single_post');
-            Route::get('/cat/{slug}','cat')->name('cat_post');
+            Route::get('/cat/{slug}/cat/{id}','cat')->name('cat_post');
 
 
         });

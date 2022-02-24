@@ -480,7 +480,7 @@
                   @foreach ($single->find_cat as $x )
                      
                   
-                  <a href="#" class="post-tag">
+                  <a href="{{ route('cat_post',['slug'=>$x->slug,'id'=>$x->id]) }}" class="post-tag">
                              {{ $x->name  }} |
                     {{-- {{ $a->find_cat->name }} --}}
                   </a>
@@ -585,7 +585,7 @@
                
                   @foreach ($cat as $c)
                
-                  <li><a href="#">{{ $c->name }}</a>
+                  <li><a href="{{ route('cat_post',['slug'=>$c->slug,'id'=>$c->id]) }}">{{ $c->name }}</a>
                   </li>
                   
                   @endforeach

@@ -471,7 +471,7 @@
           <div class="col-md-8">
 
 
-            @foreach ($all as $a )
+            @foreach ($find as $a )
               
 
             <div class="blog-posts">
@@ -515,7 +515,6 @@
             @endforeach
          
 
-                 
 
 
 
@@ -523,7 +522,7 @@
 
             <ul class="pagination">
 
-              {{ $all->links('vendor.pagination.default') }}
+            
               {{-- <li><a href="#" aria-label="Previous"><span aria-hidden="true"><i class="ti-arrow-left"></i></span></a>
               </li>
               <li class="active"><a href="#">1</a>
