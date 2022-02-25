@@ -6,6 +6,7 @@ use App\Http\Controllers\CatagorieController;
 use App\Http\Controllers\is_admin;
 use App\Http\Controllers\Post_controller;
 use App\Http\Controllers\Role_controller;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\User_controller;
 use App\Http\Controllers\User_Management;
@@ -156,6 +157,27 @@ Route::group(['middleware'=>'auth'],function(){
 
 
         });
+
+        Route::controller(SettingController::class)->group(function () {
+
+            Route::prefix('/admin')->group(function () {
+
+                Route::get('/logo', 'index')->name('logo_index');
+                Route::get('/icon', 'icon_index')->name('icon_index');
+                Route::get('/client', 'client_index')->name('client_index');
+                Route::put('/logo', 'update')->name('logo_update');
+                Route::put('/icon', 'update_icon')->name('icon_update');
+                Route::put('/client', 'update_client')->name('client_update');
+
+
+            });
+
+        });
+
+
+
+
+
 
         Route::controller(Role_controller::class)->group(function () {
            

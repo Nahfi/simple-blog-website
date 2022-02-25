@@ -156,10 +156,37 @@
 
 								</ul>
 							</li>
-						
-							<li> 
-								<a href="appointment-list.html"><i class="fe fe-layout"></i> <span>Appointments</span></a>
+
+							<li class="submenu">
+								<a href="#"><i class="fe fe-document"></i> <span>setting</span> <span class="menu-arrow"></span></a>
+								<ul style="display: none;">
+									
+									<li class=""> 
+										<a href=""><i class="fe fe-home"></i> <span>footer</span></a>
+									</li>
+									<li class=""> 
+										<a href="{{ route('icon_index') }}"><i class="fe fe-home"></i> <span>Social icon</span></a>
+									</li>
+									<li class=""> 
+										<a href="{{ route('logo_index') }}"><i class="fe fe-home"></i> <span>logo</span></a>
+									</li>
+									<li class=""> 
+										<a href="{{ route('client_index') }}"><i class="fe fe-home"></i> <span>client</span></a>
+									</li>
+
+									
+
+								</ul>
 							</li>
+
+
+
+
+
+
+
+
+
 							@elseif ((in_array('post',$data)))
 							<li class="submenu">
 								<a href="#"><i class="fe fe-document"></i> <span> post</span> <span class="menu-arrow"></span></a>

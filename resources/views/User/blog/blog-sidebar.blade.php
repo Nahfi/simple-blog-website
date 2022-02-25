@@ -47,10 +47,13 @@
     <header id="topnav">
       <div class="container">
         <!-- Logo container-->
+        @php
+          $logo=App\Models\setting::find(1);
+        @endphp
         <div class="logo">
-          <a href="index-2.html">
-            <img src="/user/images/logo_light.png" alt="" class="logo-light">
-            <img src="/user/images/logo_dark.png" alt="" class="logo-dark">
+          <a href="{{ url('/') }}">
+            <img src="{{ asset($logo->logo) }}" alt="" class="logo-light">
+            <img src="{{ asset($logo->logo) }}" alt="" class="logo-dark">
           </a>
         </div>
         <!-- End Logo container-->

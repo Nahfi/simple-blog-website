@@ -1014,7 +1014,13 @@
           <div class="row">
             <div class="col-md-4">
               <div class="copy-text">
-                <p><i class="icon-heart red mr-15"></i>© 2015 Comet Agency.</p>
+                @php
+                   $x=App\Models\setting::find(1);
+                   $c=json_decode($x->social_icon,true);
+
+                @endphp
+                {{ $c['fb'] }}
+                <p><i class="icon-heart red mr-15"></i>{{ $x->footer }}</p>
               </div>
             </div>
             <div class="col-md-4">
@@ -1037,19 +1043,19 @@
               <div class="footer-social">
                 <ul>
                   <li>
-                    <a target="_blank" href="#"><i class="ti-facebook"></i></a>
+                    <a target="_blank" href="{{ $c['fb'] }}"><i class="ti-facebook"></i></a>
                   </li>
                   <li>
-                    <a target="_blank" href="#"><i class="ti-twitter-alt"></i></a>
+                    <a target="_blank" href="{{ $c['tw'] }}"><i class="ti-twitter-alt"></i></a>
                   </li>
                   <li>
-                    <a target="_blank" href="#"><i class="ti-linkedin"></i></a>
+                    <a target="_blank" href="{{ $c['li']  }}"><i class="ti-linkedin"></i></a>
                   </li>
                   <li>
-                    <a target="_blank" href="#"><i class="ti-instagram"></i></a>
+                    <a target="_blank" href="{{  $c['ig']  }}"><i class="ti-instagram"></i></a>
                   </li>
                   <li>
-                    <a target="_blank" href="#"><i class="ti-dribbble"></i></a>
+                    <a target="_blank" href="{{  $c['bb'] }}"><i class="ti-dribbble"></i></a>
                   </li>
                 </ul>
               </div>
