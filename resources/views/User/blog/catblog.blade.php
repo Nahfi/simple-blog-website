@@ -442,6 +442,39 @@
                 </li>
               </ul>
             </li>
+            <li class="has-submenu">
+              @if (Route::has('login'))
+          <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+              @auth
+            
+              <li class="has-submenu">
+                
+                <a href="#">{{ Auth::user()->name }}</a>
+
+                <ul class="submenu">
+                  <p style="margin-left: 15px; color:black; font-size:14px">
+                    manage account 
+                  </p>
+                  <li>
+                    <a href="{{ route('profile.show') }}">User_Profile</a>
+                  </li>
+                  <li>
+                    <a id="logout" href="">Logout</a>
+                  </li>
+                 
+                </ul>
+              </li>
+                
+              @else
+                  <li><a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a></li>
+
+                  @if (Route::has('register'))
+                      <li><a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a></li>
+                  @endif
+              @endauth
+          </div>
+      @endif
+          </li>
           </ul>
           <!-- End navigation menu        -->
         </div>
@@ -544,8 +577,9 @@
             <div class="sidebar hidden-sm hidden-xs">
               <div class="widget">
                 <h6 class="upper">Search blog</h6>
-                <form>
-                  <input type="text" placeholder="Search.." class="form-control">
+                <form action="{{ route('post_search') }}"   method="POST"  enctype="multipart/form-data">
+                  @csrf
+                  <input type="text" placeholder="Search.." name="search" class="form-control">
                 </form>
               </div>
               <!-- end of widget        -->

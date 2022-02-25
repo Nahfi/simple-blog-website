@@ -205,6 +205,11 @@ Route::group(['middleware'=>'check'],function(){
             Route::get('/cat/{slug}/cat/{id}','cat')->name('cat_post');
 
 
+
+
+            Route::post('/search','search')->name('post_search');
+            Route::post('/comment','comment')->name('post_comment');
+
         });
 
     });

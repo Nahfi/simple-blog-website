@@ -441,6 +441,39 @@
                   <a href="shop-checkout.html">Checkout</a>
                 </li>
               </ul>
+              <li class="has-submenu">
+                @if (Route::has('login'))
+            <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                @auth
+              
+                <li class="has-submenu">
+                  
+                  <a href="#">{{ Auth::user()->name }}</a>
+  
+                  <ul class="submenu">
+                    <p style="margin-left: 15px; color:black; font-size:14px">
+                      manage account 
+                    </p>
+                    <li>
+                      <a href="{{ route('profile.show') }}">User_Profile</a>
+                    </li>
+                    <li>
+                      <a id="logout" href="">Logout</a>
+                    </li>
+                   
+                  </ul>
+                </li>
+                  
+                @else
+                    <li><a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a></li>
+  
+                    @if (Route::has('register'))
+                        <li><a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a></li>
+                    @endif
+                @endauth
+            </div>
+        @endif
+            </li>
             </li>
           </ul>
           <!-- End navigation menu        -->
@@ -497,79 +530,80 @@
               </div>
             </article>
             <!-- end of article-->
+            @php
+              $s=$single->Post_Comment->count()
+            @endphp
+
+
+
             <div id="comments">
-              <h5 class="upper">3 Comments</h5>
+              <h5 class="upper">{{ $s }} Comments</h5>
               <ul class="comments-list">
-                <li>
-                  <div class="comment">
-                    <div class="comment-pic">
-                      <img src="/user/images/team/1.jpg" alt="" class="img-circle">
-                    </div>
-                    <div class="comment-text">
-                      <h5 class="upper">Jesse Pinkman</h5><span class="comment-date">Posted on 29 September at 10:41</span>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime distinctio et quam possimus velit dolor sunt nisi neque, harum, dolores rem incidunt, esse ipsa nam facilis eum doloremque numquam veniam.</p><a href="#" class="comment-reply">Reply</a>
-                    </div>
-                  </div>
-                  <ul class="children">
-                    <li>
-                      <div class="comment">
-                        <div class="comment-pic">
-                          <img src="/user/images/team/2.jpg" alt="" class="img-circle">
-                        </div>
-                        <div class="comment-text">
-                          <h5 class="upper">Arya Stark</h5><span class="comment-date">Posted on 29 September at 10:41</span>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque porro quae harum dolorem exercitationem voluptas illum ipsa sed hic, cum corporis autem molestias suscipit, illo laborum, vitae, dicta ullam minus.</p><a href="#"
-                          class="comment-reply">Reply</a>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </li>
+                @foreach ($single->Post_Comment as $cd)
+      
+             
                 <li>
                   <div class="comment">
                     <div class="comment-pic">
                       <img src="/user/images/team/3.jpg" alt="" class="img-circle">
                     </div>
                     <div class="comment-text">
-                      <h5 class="upper">Rust Cohle</h5><span class="comment-date">Posted on 29 September at 10:41</span>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deleniti sit beatae natus! Beatae velit labore, numquam excepturi, molestias reiciendis, ipsam quas iure distinctio quia, voluptate expedita autem explicabo illo.</p>
-                      <a
-                      href="#" class="comment-reply">Reply</a>
+                      <h5 class="upper">    {{ $cd->user_post_info->name }} </h5><span class="comment-date">Posted on {{date("F j, Y, g:i a",strtotime($cd->created_at))  }}</span>
+                      <p>{{ $cd->comment }}</p>
+                      
                     </div>
                   </div>
                 </li>
+
+                @endforeach
               </ul>
             </div>
             <!-- end of comments-->
             <div id="respond">
               <h5 class="upper">Leave a comment</h5>
               <div class="comment-respond">
-                <form class="comment-form">
+                <form action="{{ route('post_comment') }}" method="POST" enctype="multipart/form-data" class="comment-form">
+                 @csrf
+               
                   <div class="form-double">
                     <div class="form-group">
-                      <input name="author" type="text" placeholder="Name" class="form-control">
+
+
+
+                      <input type="hidden" name="id" value="{{ $single->id }}" id="">
+                      <input name="author" type="text" placeholder="Name" name="name" value='@if(auth()->user())
+                           {{ auth()->user()->name }}
+
+                      @endif
+                      ' class="form-control">
                     </div>
                     <div class="form-group last">
-                      <input name="email" type="text" placeholder="Email" class="form-control">
+                      <input name="email" type="text" placeholder="Email" name="email" value="@if(auth()->user())
+                      {{ auth()->user()->email }}
+
+                 @endif
+                 '" class="form-control">
                     </div>
                   </div>
                   <div class="form-group">
-                    <textarea placeholder="Comment" class="form-control"></textarea>
+                    <textarea placeholder="Comment" name="comment" class="form-control"></textarea>
                   </div>
                   <div class="form-submit text-right">
-                    <button type="button" class="btn btn-color-out">Post Comment</button>
+                    <button type="submit" class="btn btn-color-out">Post Comment</button>
                   </div>
                 </form>
               </div>
             </div>
+        
             <!-- end of comment form-->
           </div>
           <div class="col-md-3 col-md-offset-1">
             <div class="sidebar hidden-sm hidden-xs">
               <div class="widget">
                 <h6 class="upper">Search blog</h6>
-                <form>
-                  <input type="text" placeholder="Search.." class="form-control">
+                <form action="{{ route('post_search') }}"   method="POST"  enctype="multipart/form-data">
+                  @csrf
+                  <input type="text" placeholder="Search.." name="search" class="form-control">
                 </form>
               </div>
               <!-- end of widget        -->

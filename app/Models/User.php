@@ -56,7 +56,37 @@ class User extends Authenticatable implements MustVerifyEmail
 
 
    
+
+        
     }
+
+
+
+
+
+    public function user_comment(){
+
+        return $this->hasMany(Post_Comment::class,'user_id','id');
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /**
      * The attributes that should be cast.
      *

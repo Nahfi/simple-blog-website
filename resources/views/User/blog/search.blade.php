@@ -440,47 +440,41 @@
                 <li>
                   <a href="shop-checkout.html">Checkout</a>
                 </li>
-                
               </ul>
-
-
-
             </li>
-
-
             <li class="has-submenu">
-              @if (Route::has('login'))
-          <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-              @auth
-            
-              <li class="has-submenu">
+                  @if (Route::has('login'))
+              <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                  @auth
                 
-                <a href="#">{{ Auth::user()->name }}</a>
-
-                <ul class="submenu">
-                  <p style="margin-left: 15px; color:black; font-size:14px">
-                    manage account 
-                  </p>
-                  <li>
-                    <a href="{{ route('profile.show') }}">User_Profile</a>
+                  <li class="has-submenu">
+                    
+                    <a href="#">{{ Auth::user()->name }}</a>
+    
+                    <ul class="submenu">
+                      <p style="margin-left: 15px; color:black; font-size:14px">
+                        manage account 
+                      </p>
+                      <li>
+                        <a href="{{ route('profile.show') }}">User_Profile</a>
+                      </li>
+                      <li>
+                        <a id="logout" href="">Logout</a>
+                      </li>
+                     
+                    </ul>
                   </li>
-                  <li>
-                    <a id="logout" href="">Logout</a>
-                  </li>
-                 
-                </ul>
+                    
+                  @else
+                      <li><a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a></li>
+    
+                      @if (Route::has('register'))
+                          <li><a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a></li>
+                      @endif
+                  @endauth
+              </div>
+          @endif
               </li>
-                
-              @else
-                  <li><a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a></li>
-
-                  @if (Route::has('register'))
-                      <li><a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a></li>
-                  @endif
-              @endauth
-          </div>
-      @endif
-          </li>
           </ul>
           <!-- End navigation menu        -->
         </div>
@@ -510,11 +504,10 @@
           <div class="col-md-8">
 
 
-            @foreach ($all as $a )
+         
+            @foreach ($find as $a )
               
 
-
-  
             <div class="blog-posts">
               <article class="post-single">
                 <div class="post-info">
@@ -554,9 +547,7 @@
             
             </div>
             @endforeach
-         
 
-                 
 
 
 
@@ -564,7 +555,7 @@
 
             <ul class="pagination">
 
-              {{ $all->links('vendor.pagination.default') }}
+            
               {{-- <li><a href="#" aria-label="Previous"><span aria-hidden="true"><i class="ti-arrow-left"></i></span></a>
               </li>
               <li class="active"><a href="#">1</a>
