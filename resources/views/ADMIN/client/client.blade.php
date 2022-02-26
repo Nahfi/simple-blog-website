@@ -24,6 +24,10 @@
                       $c=json_decode($find->client,true) 
                     
                   @endphp 
+
+
+   
+    
        
                      
 

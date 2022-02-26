@@ -12,7 +12,7 @@ use App\Http\Controllers\User_controller;
 use App\Http\Controllers\User_Management;
 use App\Models\Role;
 use Illuminate\Support\Facades\Route;
-
+use App\Models\setting;
 
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
@@ -206,7 +206,15 @@ Route::group(['middleware'=>'auth'],function(){
 Route::group(['middleware'=>'check'],function(){
 
     Route::get('/', function () {
-        return view('User.index');
+
+        
+        $c=setting::find(1);
+       $x= json_decode(json_decode($c->client)->image);
+       
+     
+         
+      
+        return view('User.index',compact('c','x'));
     });
   
     

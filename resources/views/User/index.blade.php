@@ -818,21 +818,43 @@
         <!-- end of portfolio grid-->
       </div>
     </section>
+
+
+
+
+
+
+
+              
+ 
+
     <section>
       <div class="container">
+      
+        @php
+          $d=json_decode($c->client,true)
+        @endphp
         <div class="title center">
-          <h4 class="upper">Some of the best.</h4>
-          <h3>Our Clients<span class="red-dot"></span></h3>
+          <h4 class="upper">{{ $d['test1'] }}</h4>
+          <h3>{{ $d['test2'] }}<span class="red-dot"></span></h3>
           <hr>
+        
+
+       
+          
         </div>
         <div class="section-content">
           <div class="boxes clients">
             <div class="row">
+              @foreach (json_decode($d['image']) as $im )
+                
+          
               <div class="col-sm-4 col-xs-6 border-right border-bottom">
-                <img src="/user/images/clients/1.png" alt="" data-animated="true" class="client-image">
+                <img src="{{ asset($im) }}" alt="" data-animated="true" class="client-image">
               </div>
-              <div class="col-sm-4 col-xs-6 border-right border-bottom">
-                <img src="/user/images/clients/2.png" alt="" data-animated="true" data-delay="500" class="client-image">
+              @endforeach
+              {{-- <div class="col-sm-4 col-xs-6 border-right border-bottom">
+                <img src="{{ asset($x[0]) }}" alt="" data-animated="true" data-delay="500" class="client-image">
               </div>
               <div class="col-sm-4 col-xs-6 border-bottom">
                 <img src="/user/images/clients/3.png" alt="" data-animated="true" data-delay="1000" class="client-image">
@@ -845,7 +867,7 @@
               </div>
               <div class="col-sm-4 col-xs-6">
                 <img src="/user/images/clients/6.png" alt="" data-animated="true" data-delay="1000" class="client-image">
-              </div>
+              </div> --}}
             </div>
             <!-- end of row-->
           </div>
